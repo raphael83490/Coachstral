@@ -1,257 +1,352 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Ultimate AI Athlete App: Training, Nutrition, Social, and Events">
-    <title>Ignite | AI Athlete Hub</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/style.css">
-  </head>
-  <body>
-    <!-- Background Animated Shapes -->
-    <div class="bg-shape shape-red"></div>
-    <div class="bg-shape shape-orange"></div>
-    <div class="bg-shape shape-yellow"></div>
 
-    <div class="app-container">
-      <!-- Sidebar Navigation -->
-      <nav class="sidebar">
-        <div class="logo">
-          <h1>IGNITE</h1>
-          <div class="logo-dot"></div>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Ultimate AI Athlete App: Training, Nutrition, Social, and Events">
+  <title>Ignite | AI Athlete Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+  <!-- Background Animated Shapes -->
+  <div class="bg-shape shape-red"></div>
+  <div class="bg-shape shape-orange"></div>
+  <div class="bg-shape shape-yellow"></div>
+
+  <div class="app-container">
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+      <div class="logo">
+        <h1>IGNITE</h1>
+        <div class="logo-dot"></div>
+      </div>
+      <ul class="nav-links">
+        <li class="active" data-tab="dashboard">
+          <svg viewBox="0 0 24 24" fill="none" class="nav-icon">
+            <path d="M4 19v-9l8-6 8 6v9h-6v-5H10v5H4z" fill="currentColor" />
+          </svg>
+          Dashboard
+        </li>
+        <li data-tab="training">
+          <svg viewBox="0 0 24 24" fill="none" class="nav-icon">
+            <path d="M12 2L2 22h20L12 2zm0 4.5l6.5 13.5h-13L12 6.5z" fill="currentColor" />
+          </svg>
+          AI Training & Diet
+        </li>
+        <li data-tab="video">
+          <svg viewBox="0 0 24 24" fill="none" class="nav-icon">
+            <path
+              d="M21 4H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM3 18V6h18v12H3zm7-11v8l7-4-7-4z"
+              fill="currentColor" />
+          </svg>
+          Video Analysis
+        </li>
+        <li data-tab="social">
+          <svg viewBox="0 0 24 24" fill="none" class="nav-icon">
+            <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM4 16V4h16v12H4z"
+              fill="currentColor" />
+          </svg>
+          Group Chat
+        </li>
+        <li data-tab="events">
+          <svg viewBox="0 0 24 24" fill="none" class="nav-icon">
+            <path
+              d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 002 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"
+              fill="currentColor" />
+          </svg>
+          Events
+        </li>
+      </ul>
+      <div class="user-profile" id="nav-profile">
+        <img src="https://i.pravatar.cc/150?img=11" alt="User" class="avatar">
+        <div class="user-info">
+          <span class="user-name">Alex Pro</span>
+          <span class="user-level">Elite Rank</span>
         </div>
-        <ul class="nav-links">
-          <li class="active" data-tab="dashboard">
-            <svg viewBox="0 0 24 24" fill="none" class="nav-icon"><path d="M4 19v-9l8-6 8 6v9h-6v-5H10v5H4z" fill="currentColor"/></svg>
-            Dashboard
-          </li>
-          <li data-tab="training">
-            <svg viewBox="0 0 24 24" fill="none" class="nav-icon"><path d="M12 2L2 22h20L12 2zm0 4.5l6.5 13.5h-13L12 6.5z" fill="currentColor"/></svg>
-            AI Training & Diet
-          </li>
-          <li data-tab="video">
-            <svg viewBox="0 0 24 24" fill="none" class="nav-icon"><path d="M21 4H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zM3 18V6h18v12H3zm7-11v8l7-4-7-4z" fill="currentColor"/></svg>
-            Video Analysis
-          </li>
-          <li data-tab="social">
-            <svg viewBox="0 0 24 24" fill="none" class="nav-icon"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zM4 16V4h16v12H4z" fill="currentColor"/></svg>
-            Group Chat
-          </li>
-          <li data-tab="events">
-            <svg viewBox="0 0 24 24" fill="none" class="nav-icon"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 002 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z" fill="currentColor"/></svg>
-            Events
-          </li>
-        </ul>
-        <div class="user-profile">
-          <img src="https://i.pravatar.cc/150?img=11" alt="User" class="avatar">
-          <div class="user-info">
-            <span class="user-name">Alex Pro</span>
-            <span class="user-level">Elite Rank</span>
+      </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="content-area">
+      <header class="top-bar">
+        <div class="greeting">
+          <h2>Welcome back, Alex.</h2>
+          <p>Your body battery is at <span class="highlight-orange">84%</span> today. Ready to push?</p>
+        </div>
+        <div class="actions">
+          <button class="btn-primary">Add Data +</button>
+          <div class="notification-bell">
+            <svg viewBox="0 0 24 24" fill="none" class="icon">
+              <path
+                d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"
+                fill="currentColor" />
+            </svg>
+            <div class="badge">3</div>
           </div>
         </div>
-      </nav>
+      </header>
 
-      <!-- Main Content Area -->
-      <main class="content-area">
-        <header class="top-bar">
-          <div class="greeting">
-            <h2>Welcome back, Alex.</h2>
-            <p>Your body battery is at <span class="highlight-orange">84%</span> today. Ready to push?</p>
-          </div>
-          <div class="actions">
-            <button class="btn-primary">Add Data +</button>
-            <div class="notification-bell">
-              <svg viewBox="0 0 24 24" fill="none" class="icon"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z" fill="currentColor"/></svg>
-              <div class="badge">3</div>
-            </div>
-          </div>
-        </header>
-
-        <div class="views-wrapper">
-          <!-- View: Dashboard -->
-          <div class="view active" id="view-dashboard">
-            <div class="grid-layout">
-              <div class="card glass hero-card">
-                <div class="card-content">
-                  <h3>AI Daily Protocol</h3>
-                  <div class="protocol-content">
-                    <p>Based on yesterday's strain, your AI coach recommends:</p>
-                    <ul class="protocol-list">
-                      <li><span class="dot red"></span> <strong>Focus:</strong> Explosive Power (45 m)</li>
-                      <li><span class="dot orange"></span> <strong>Nutrition:</strong> High Carb Load (3200 kcal)</li>
-                      <li><span class="dot yellow"></span> <strong>Recovery:</strong> Active stretching at 8PM</li>
-                    </ul>
-                    <button class="btn-outline">Start Workout</button>
-                  </div>
-                </div>
-                <!-- Mini visualization -->
-                <div class="chart-mockup">
-                  <div class="bar" style="height: 60%"></div>
-                  <div class="bar high" style="height: 90%"></div>
-                  <div class="bar" style="height: 40%"></div>
-                  <div class="bar" style="height: 70%"></div>
-                  <div class="bar current" style="height: 85%"></div>
+      <div class="views-wrapper">
+        <!-- View: Dashboard -->
+        <div class="view active" id="view-dashboard">
+          <div class="grid-layout">
+            <div class="card glass hero-card">
+              <div class="card-content">
+                <h3>AI Daily Protocol</h3>
+                <div class="protocol-content">
+                  <p>Based on yesterday's strain, your AI coach recommends:</p>
+                  <ul class="protocol-list">
+                    <li><span class="dot red"></span> <strong>Focus:</strong> Explosive Power (45 m)</li>
+                    <li><span class="dot orange"></span> <strong>Nutrition:</strong> High Carb Load (3200 kcal)</li>
+                    <li><span class="dot yellow"></span> <strong>Recovery:</strong> Active stretching at 8PM</li>
+                  </ul>
+                  <button class="btn-outline">Start Workout</button>
                 </div>
               </div>
-
-              <div class="card stat-card glow-red">
-                <h4>Training Load</h4>
-                <div class="stat-value">4.2<span class="unit">kV</span></div>
-                <div class="stat-trend positive">↑ 12% vs last week</div>
-              </div>
-
-              <div class="card stat-card glow-orange">
-                <h4>Caloric Burn</h4>
-                <div class="stat-value">2,850<span class="unit">kcal</span></div>
-                <div class="stat-trend neutral">- 2% vs target</div>
-              </div>
-              
-              <div class="card stat-card glow-yellow">
-                <h4>Readiness</h4>
-                <div class="stat-value">High</div>
-                <div class="stat-trend positive">Optimal State</div>
+              <!-- Mini visualization -->
+              <div class="chart-mockup">
+                <div class="bar" style="height: 60%"></div>
+                <div class="bar high" style="height: 90%"></div>
+                <div class="bar" style="height: 40%"></div>
+                <div class="bar" style="height: 70%"></div>
+                <div class="bar current" style="height: 85%"></div>
               </div>
             </div>
-            
-            <div class="section-header">
-              <h3>Recent Activity & Video Uploads</h3>
+
+            <div class="card stat-card glow-red">
+              <h4>Training Load</h4>
+              <div class="stat-value">4.2<span class="unit">kV</span></div>
+              <div class="stat-trend positive">↑ 12% vs last week</div>
             </div>
-            <div class="horizontal-scroll">
-              <div class="card feed-card">
-                <div class="video-thumbnail">
-                   <div class="play-btn">▶</div>
-                   <span class="ai-badge">AI Analyzed</span>
-                </div>
-                <div class="feed-info">
-                  <h4>Sprint Form Analysis</h4>
-                  <p>AI: "Increase stride length by 5%, arm drive looks solid."</p>
-                </div>
-              </div>
-              <div class="card feed-card">
-                <div class="video-thumbnail alt1">
-                   <div class="play-btn">▶</div>
-                   <span class="ai-badge">AI Analyzed</span>
-                </div>
-                <div class="feed-info">
-                  <h4>Squat Depth Check</h4>
-                  <p>AI: "Perfect depth. Bar path is slightly forward."</p>
-                </div>
-              </div>
+
+            <div class="card stat-card glow-orange">
+              <h4>Caloric Burn</h4>
+              <div class="stat-value">2,850<span class="unit">kcal</span></div>
+              <div class="stat-trend neutral">- 2% vs target</div>
+            </div>
+
+            <div class="card stat-card glow-yellow">
+              <h4>Readiness</h4>
+              <div class="stat-value">High</div>
+              <div class="stat-trend positive">Optimal State</div>
             </div>
           </div>
 
-          <!-- View: AI Training & Diet -->
-          <div class="view" id="view-training">
-            <h2 class="view-title">Personalized Generation</h2>
-            <div class="ai-chat-interface">
-              <div class="chat-history">
-                <div class="message ai-msg">
-                  <div class="avatar-small">AI</div>
-                  <div class="msg-bubble">I noticed your resting heart rate elevated slightly. Based on your upcoming event, I've adjusted your diet to include 20g more protein today, and swapped the heavy lifts for a plyometric session. How are your legs feeling?</div>
+          <div class="section-header">
+            <h3>Recent Activity & Video Uploads</h3>
+          </div>
+          <div class="horizontal-scroll">
+            <div class="card feed-card">
+              <div class="video-thumbnail">
+                <div class="play-btn">▶</div>
+                <span class="ai-badge">AI Analyzed</span>
+              </div>
+              <div class="feed-info">
+                <h4>Sprint Form Analysis</h4>
+                <p>AI: "Increase stride length by 5%, arm drive looks solid."</p>
+              </div>
+            </div>
+            <div class="card feed-card">
+              <div class="video-thumbnail alt1">
+                <div class="play-btn">▶</div>
+                <span class="ai-badge">AI Analyzed</span>
+              </div>
+              <div class="feed-info">
+                <h4>Squat Depth Check</h4>
+                <p>AI: "Perfect depth. Bar path is slightly forward."</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- View: AI Training & Diet -->
+        <div class="view" id="view-training">
+          <h2 class="view-title">Personalized Generation</h2>
+          <div class="ai-chat-interface">
+            <div class="chat-history">
+              <div class="message ai-msg">
+                <div class="avatar-small">AI</div>
+                <div class="msg-bubble">I noticed your resting heart rate elevated slightly. Based on your upcoming
+                  event, I've adjusted your diet to include 20g more protein today, and swapped the heavy lifts for a
+                  plyometric session. How are your legs feeling?</div>
+              </div>
+              <div class="message user-msg">
+                <div class="msg-bubble">Legs are a bit sore from Tuesday's session.</div>
+              </div>
+              <div class="message ai-msg">
+                <div class="avatar-small">AI</div>
+                <div class="msg-bubble">Understood. I have generated a targeted recovery flow with foam rolling focus on
+                  the quads. Also, recommending an anti-inflammatory smoothie post-workout (recipe added to your meal
+                  plan). </div>
+              </div>
+            </div>
+            <div class="chat-input-area">
+              <input type="text" placeholder="Tell your AI Coach how you feel or ask for advice...">
+              <button class="btn-send"><svg viewBox="0 0 24 24" fill="none" class="icon">
+                  <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" fill="currentColor" />
+                </svg></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- View: Social (Group Chat) -->
+        <div class="view" id="view-social">
+          <div class="split-layout">
+            <div class="chat-list">
+              <h3>Squads</h3>
+              <div class="chat-item active">
+                <div class="chat-avatar squad-1">R</div>
+                <div class="chat-preview">
+                  <h4>Runners Elite</h4>
+                  <p>Sam: "Track session at 6?"</p>
                 </div>
-                <div class="message user-msg">
-                  <div class="msg-bubble">Legs are a bit sore from Tuesday's session.</div>
+              </div>
+              <div class="chat-item">
+                <div class="chat-avatar squad-2">L</div>
+                <div class="chat-preview">
+                  <h4>Leg Day Survivors</h4>
+                  <p>Alex: "I can't walk lol"</p>
                 </div>
-                <div class="message ai-msg">
-                  <div class="avatar-small">AI</div>
-                  <div class="msg-bubble">Understood. I have generated a targeted recovery flow with foam rolling focus on the quads. Also, recommending an anti-inflammatory smoothie post-workout (recipe added to your meal plan). </div>
+              </div>
+            </div>
+            <div class="chat-window card glass">
+              <header class="chat-header">
+                <h4>Runners Elite</h4>
+                <span class="members">12 Members online</span>
+              </header>
+              <div class="chat-messages">
+                <div class="msg them">
+                  <strong>Sam</strong>
+                  <div class="bubble">Track session at 6? We are doing 400m repeats.</div>
+                </div>
+                <div class="msg me">
+                  <div class="bubble">Count me in. My AI coach just approved it. 🔥</div>
                 </div>
               </div>
               <div class="chat-input-area">
-                <input type="text" placeholder="Tell your AI Coach how you feel or ask for advice...">
-                <button class="btn-send"><svg viewBox="0 0 24 24" fill="none" class="icon"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" fill="currentColor"/></svg></button>
+                <input type="text" placeholder="Type a message...">
+                <button class="btn-send"><svg viewBox="0 0 24 24" fill="none" class="icon">
+                    <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" fill="currentColor" />
+                  </svg></button>
               </div>
             </div>
           </div>
-
-          <!-- View: Social (Group Chat) -->
-          <div class="view" id="view-social">
-            <div class="split-layout">
-              <div class="chat-list">
-                <h3>Squads</h3>
-                <div class="chat-item active">
-                  <div class="chat-avatar squad-1">R</div>
-                  <div class="chat-preview">
-                    <h4>Runners Elite</h4>
-                    <p>Sam: "Track session at 6?"</p>
-                  </div>
-                </div>
-                <div class="chat-item">
-                  <div class="chat-avatar squad-2">L</div>
-                  <div class="chat-preview">
-                    <h4>Leg Day Survivors</h4>
-                    <p>Alex: "I can't walk lol"</p>
-                  </div>
-                </div>
-              </div>
-              <div class="chat-window card glass">
-                <header class="chat-header">
-                  <h4>Runners Elite</h4>
-                  <span class="members">12 Members online</span>
-                </header>
-                <div class="chat-messages">
-                  <div class="msg them">
-                    <strong>Sam</strong>
-                    <div class="bubble">Track session at 6? We are doing 400m repeats.</div>
-                  </div>
-                  <div class="msg me">
-                    <div class="bubble">Count me in. My AI coach just approved it. 🔥</div>
-                  </div>
-                </div>
-                <div class="chat-input-area">
-                  <input type="text" placeholder="Type a message...">
-                  <button class="btn-send"><svg viewBox="0 0 24 24" fill="none" class="icon"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" fill="currentColor"/></svg></button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- View: Events -->
-          <div class="view" id="view-events">
-            <header class="events-header">
-              <h2 class="view-title">Upcoming Competitions</h2>
-              <div class="filter-bar">
-                <button class="filter-btn active">Running</button>
-                <button class="filter-btn">Crossfit</button>
-                <button class="filter-btn">Cycling</button>
-                <input type="text" placeholder="Scrape specific location..." class="search-input">
-              </div>
-            </header>
-            <div class="grid-layout events-grid">
-              <div class="card event-card">
-                <div class="event-date">
-                  <span class="day">15</span>
-                  <span class="month">OCT</span>
-                </div>
-                <div class="event-details">
-                  <h4>City Marathon 2026</h4>
-                  <p>Location: Central Park</p>
-                  <p class="scraped-tag">Scraped from AthleticsHub</p>
-                </div>
-                <button class="btn-outline auto-width">Join</button>
-              </div>
-              <div class="card event-card">
-                <div class="event-date">
-                  <span class="day">22</span>
-                  <span class="month">NOV</span>
-                </div>
-                <div class="event-details">
-                  <h4>Ironman Qualifiers</h4>
-                  <p>Location: West Coast Bay</p>
-                  <p class="scraped-tag">Scraped from TriNet</p>
-                </div>
-                <button class="btn-outline auto-width">Join</button>
-              </div>
-            </div>
-          </div>
-          
         </div>
-      </main>
-    </div>
-    <script type="module" src="/main.js"></script>
-  </body>
+
+        <!-- View: Events -->
+        <div class="view" id="view-events">
+          <header class="events-header">
+            <h2 class="view-title">Upcoming Competitions</h2>
+            <div class="filter-bar">
+              <button class="filter-btn active">Running</button>
+              <button class="filter-btn">Crossfit</button>
+              <button class="filter-btn">Cycling</button>
+              <input type="text" placeholder="Scrape specific location..." class="search-input">
+            </div>
+          </header>
+          <div class="grid-layout events-grid">
+            <div class="card event-card">
+              <div class="event-date">
+                <span class="day">15</span>
+                <span class="month">OCT</span>
+              </div>
+              <div class="event-details">
+                <h4>City Marathon 2026</h4>
+                <p>Location: Central Park</p>
+                <p class="scraped-tag">Scraped from AthleticsHub</p>
+              </div>
+              <button class="btn-outline auto-width">Join</button>
+            </div>
+            <div class="card event-card">
+              <div class="event-date">
+                <span class="day">22</span>
+                <span class="month">NOV</span>
+              </div>
+              <div class="event-details">
+                <h4>Ironman Qualifiers</h4>
+                <p>Location: West Coast Bay</p>
+                <p class="scraped-tag">Scraped from TriNet</p>
+              </div>
+              <button class="btn-outline auto-width">Join</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- View: Profile -->
+        <div class="view" id="view-profile">
+          <header class="profile-header">
+            <div class="profile-avatar-container">
+              <img src="https://i.pravatar.cc/150?img=11" alt="User" class="profile-large-avatar">
+              <div class="rank-badge">Elite Rank</div>
+            </div>
+            <div class="profile-header-info">
+              <h2 class="view-title" style="margin-bottom: 5px;">Alex Pro</h2>
+              <p class="text-muted" style="color: var(--text-muted); margin-bottom: 20px;">Sprinter & Triathlete | New
+                York, USA</p>
+              <div class="profile-stats">
+                <div class="p-stat"><strong>24</strong><span>Age</span></div>
+                <div class="p-stat"><strong>78kg</strong><span>Weight</span></div>
+                <div class="p-stat"><strong>185cm</strong><span>Height</span></div>
+                <div class="p-stat"><strong>M</strong><span>Gender</span></div>
+              </div>
+            </div>
+            <button class="btn-outline">Edit Profile</button>
+          </header>
+
+          <div class="grid-layout">
+            <div class="card glass">
+              <h3>Vitals & Baseline</h3>
+              <ul class="protocol-list">
+                <li><span class="dot red"></span> <strong>Max HR:</strong> 195 bpm</li>
+                <li><span class="dot orange"></span> <strong>Resting HR:</strong> 42 bpm</li>
+                <li><span class="dot yellow"></span> <strong>VO2 Max:</strong> 65 ml/kg/min</li>
+              </ul>
+            </div>
+            <div class="card glass" style="grid-column: span 2;">
+              <h3>Personal Records</h3>
+              <div class="pr-grid">
+                <div class="pr-item">
+                  <span class="pr-label">100m Dash</span>
+                  <span class="pr-value highlight-orange">10.8s</span>
+                </div>
+                <div class="pr-item">
+                  <span class="pr-label">5k Run</span>
+                  <span class="pr-value highlight-orange">15:42</span>
+                </div>
+                <div class="pr-item">
+                  <span class="pr-label">Back Squat</span>
+                  <span class="pr-value highlight-orange">160kg</span>
+                </div>
+                <div class="pr-item">
+                  <span class="pr-label">Deadlift</span>
+                  <span class="pr-value highlight-orange">210kg</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card glass" style="margin-bottom: 30px;">
+            <h3>Connected Devices</h3>
+            <div class="devices-list" style="margin-top: 20px; display: flex; gap: 20px; flex-wrap: wrap;">
+              <div class="device-badge connected"> Apple Watch Ultra</div>
+              <div class="device-badge connected">Garmin HRM-Pro</div>
+              <div class="device-badge">Whoop 4.0 (Syncing...)</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+  <script type="module" src="/main.js"></script>
+</body>
+
 </html>

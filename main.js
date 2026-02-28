@@ -4,24 +4,33 @@ document.addEventListener('DOMContentLoaded', () => {
     // Tab switching logic
     const navLinks = document.querySelectorAll('.nav-links li');
     const views = document.querySelectorAll('.view');
+    const profileBtn = document.getElementById('nav-profile');
+
+    const switchView = (targetId, clickedEl) => {
+        // Remove active classes
+        navLinks.forEach(l => l.classList.remove('active'));
+        if (profileBtn) profileBtn.classList.remove('active');
+        views.forEach(v => v.classList.remove('active'));
+
+        // Add active to clicked link
+        if (clickedEl) clickedEl.classList.add('active');
+
+        // Find matching view
+        const targetView = document.getElementById(targetId);
+        if (targetView) targetView.classList.add('active');
+    };
 
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
-            // Remove active classes
-            navLinks.forEach(l => l.classList.remove('active'));
-            views.forEach(v => v.classList.remove('active'));
-
-            // Add active to clicked link
-            link.classList.add('active');
-
-            // Find matching view
-            const target = link.getAttribute('data-tab');
-            const targetView = document.getElementById(`view-${target}`);
-            if (targetView) {
-                targetView.classList.add('active');
-            }
+            switchView(`view-${link.getAttribute('data-tab')}`, link);
         });
     });
+
+    if (profileBtn) {
+        profileBtn.addEventListener('click', () => {
+            switchView('view-profile', profileBtn);
+        });
+    }
 
     // Chat Interface interaction
     const chatInput = document.querySelector('.ai-chat-interface .chat-input-area input');
@@ -64,7 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Helper to escape HTML to prevent XSS (basic)
     function escapeHTML(str) {
-        return str.replace(/[&<>'"]/g, 
+        return str.replace(/[&<>'"]/g,
             tag => ({
                 '&': '&amp;',
                 '<': '&lt;',
